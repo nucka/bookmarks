@@ -1,7 +1,12 @@
 class BookmarksController < ApplicationController
 
   def index
-    @bookmarks = Bookmark.all
+    if params[:search]
+      condition = [:title, :url, :shortening].map { |e| e.to_s + ' ilike :search' }.join(' or ')
+      @bookmarks = Bookmark.where(condition, {search: '%'+params[:search]+'%'})
+    else
+      @bookmarks = Bookmark.all
+    end
   end
 
   def show

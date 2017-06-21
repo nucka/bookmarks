@@ -21,3 +21,8 @@
 h1 {
   margin-bottom: 50px;
 }
+
+#search {
+  float: right;
+  width: 300px;
+}
