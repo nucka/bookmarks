@@ -14,8 +14,9 @@
  *= require_self
  */
 
-.nav.nav-pills {
-   margin:50px 0px;
+.margin-50 {
+  margin-top:50px;
+  margin-bottom:50px;
 }
 
 h1 {
