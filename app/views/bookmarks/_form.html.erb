@@ -1,17 +1,3 @@
-<% if @bookmark.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@bookmark.errors.count, "error") %> prohibited
-        this bookmark from being saved:
-      </h2>
-      <ul>
-        <% @bookmark.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
 <%= form_for @bookmark, :html => { :class => "form-horizontal" } do |f| %>
   <div class="form-group <% if @bookmark.errors[:title].any? %> has-error <% end %>">
     <%= f.label :title, class: 'col-sm-2 control-label' %>

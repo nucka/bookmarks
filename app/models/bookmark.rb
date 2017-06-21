@@ -6,7 +6,7 @@ class Bookmark < ApplicationRecord
   validates :shortening, length: { maximum: 10 }
 
   def top_level_url
-    URI.parse(self.url).host.downcase
+    URI.parse(self.url).host
   end
 
   before_validation do
