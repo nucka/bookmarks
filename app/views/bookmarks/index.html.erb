@@ -1,6 +1,6 @@
 <h1>Listing bookmarks</h1>
 
-<table class="table table-striped">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Title</th>
@@ -13,11 +13,11 @@
   <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.title %></td>
+        <td><b><%= bookmark.title %></b></td>
         <td><%= bookmark.site.url %></td>
         <td><%= bookmark.url %></td>
         <td><%= bookmark.shortening %></td>
-        <td>
+        <td class="text-right">
           <%= link_to bookmark_path(bookmark), class: 'btn btn-default  btn-link ' do %>
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             Show
